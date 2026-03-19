@@ -1,0 +1,17 @@
+{
+  "name": "npm-guardian-monorepo",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "cli"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "turbo": "latest"
+  }
+}

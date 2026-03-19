@@ -1,0 +1,16 @@
+# Core API
+fastapi>=0.115.0
+uvicorn>=0.30.0
+pydantic>=2.9.0
+
+# Lightweight analysis (used by obfuscation.py)
+scikit-learn>=1.5.0
+numpy>=2.0.0
+networkx>=3.3
+pandas>=2.2.0
+scipy>=1.14.0
+
+# Heavy ML (uncomment when ready for GNN threat classifier)
+# torch>=2.9.0
+# torchvision>=0.20.0
+# transformers>=4.45.0

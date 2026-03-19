@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  sandbox-worker:
+    build:
+      context: ./monitor
+      dockerfile: Dockerfile
+    privileged: true # Required for eBPF monitoring via sysdig
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    volumes:
+      - /sys/kernel/debug:/sys/kernel/debug:ro # Required for eBPF probing

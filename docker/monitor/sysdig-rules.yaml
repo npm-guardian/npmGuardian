@@ -1,0 +1,19 @@
+- list: sensitive_files
+  items: [/etc/shadow, /etc/passwd, /root/.ssh/id_rsa, /root/.aws/credentials]
+
+- macro: open_sensitive
+  condition: (evt.type=open or evt.type=openat) and fd.name in (sensitive_files)
+
+- rule: Detect sensitive file access
+  desc: Detects when a node.js package tries to read AWS keys or SSH keys
+  condition: open_sensitive and proc.name = "node"
+  output: "Malicious Access Attempt: %proc.name accessed %fd.name (command=%proc.cmdline)"
+  priority: CRITICAL
+  tags: [filesystem, mitre_credential_access]
+
+- rule: Detect outbound connection to unusual port
+  desc: Node processes connecting externally
+  condition: evt.type=connect and fd.type=ipv4 and fd.port not in (80, 443)
+  output: "Suspicious Outbound Connection: %proc.name connecting to %fd.rip:%fd.port"
+  priority: HIGH
+  tags: [network, mitre_exfiltration]

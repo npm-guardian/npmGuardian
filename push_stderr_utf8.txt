@@ -1,0 +1,53 @@
+﻿git : remote: error: 
+Trace: e373cf1923258b29
+02f69623a4e0b8754b12e21
+e60a00c42fb9b1f89603fe2
+fd        
+At line:1 char:1
++ git push https://gith
+ub.com/npm-guardian/npm
+Guardian.git HEAD 2> 
+push ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (remote: error   
+ : ...03fe2fd          
+  :String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+remote: error: See 
+https://gh.io/lfs for 
+more information.      
+  
+remote: error: File nod
+e_modules/@next/swc-win
+32-x64-msvc/next-swc.wi
+n32-x64-msvc.node is 
+123.68 MB; this 
+exceeds GitHub's file 
+size limit of 100.00 
+MB        
+remote: error: GH001: 
+Large files detected. 
+You may want to try 
+Git Large File Storage 
+- https://git-lfs.githu
+b.com.        
+To https://github.com/n
+pm-guardian/npmGuardian
+.git
+ ! [remote rejected]   
+HEAD -> main 
+(pre-receive hook 
+declined)
+error: failed to push 
+some refs to 'https://g
+ithub.com/npm-guardian/
+npmGuardian.git'
